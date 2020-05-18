@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'email', 'password',
+        'email', 'password', 'name'
     ];
 
     /**
@@ -36,10 +36,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'email_verified_at' => 'datetime'
     ];
 
     public function employee(){
-        return $this->hasOne['App\Employee', 'emp_no'];
+        return $this->hasOne(['App\Employee', 'emp_no']);
     }
 }
